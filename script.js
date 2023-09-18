@@ -1,7 +1,8 @@
 import * as THREE from 'three';
-import { OBJLoader } from 'three/addons/loaders/OBJLoader.js';
+import { OBJLoader } from 'OBJLoader.js';
+
 // Create a new OBJLoader instance
-const loader = new THREE.OBJLoader();
+const loader = new OBJLoader();
 // Set up the scene
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
@@ -10,7 +11,6 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 document.getElementById('scene-container').appendChild(renderer.domElement);
 
 // Load your OBJ model
-
 loader.load('./assets/mvx_logo.obj', (obj) => {
     scene.add(obj);
 });
