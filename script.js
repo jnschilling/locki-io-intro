@@ -3,16 +3,28 @@ import { OrbitControls } from 'three/addons/controls/OrbitControls.js'
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import Stats from 'three/addons/libs/stats.module.js'
 
-// Set up the scene
-const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-camera.position.z = 2
 const renderer = new THREE.WebGLRenderer();
 renderer.shadowMap.enabled = true
 renderer.setSize(window.innerWidth, window.innerHeight);
-// document.body.appendChild(renderer.domElement)
+
 document.getElementById('scene-container').appendChild(renderer.domElement);
-const controls = new OrbitControls(camera, renderer.domElement)
+
+// Set up the scene
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(
+    45,
+    window.innerWidth / window.innerHeight,
+    0.1,
+    1000
+);
+
+const orbit = new OrbitControls(camera, renderer.domElement);
+
+camera.position.set(10, 15, -22);
+
+orbit.update();
+
+// const controls = new OrbitControls(camera, renderer.domElement)
 // Create a new OBJLoader instance
 const loader = new GLTFLoader();
 // Load your OBJ model
@@ -61,7 +73,7 @@ const stats = new Stats()
 document.body.appendChild(stats.dom)
 var animate = function () {
     requestAnimationFrame(animate)
-    controls.update()
+    orbit.update()
     render()
     stats.update()
 }
