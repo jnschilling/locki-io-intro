@@ -65,7 +65,7 @@ a {
 .overlay.second {
 
    /* Just for emphasis, adjust as needed */
-  
+   z-index: 0;
 }
 
 #scene-container {

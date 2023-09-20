@@ -18,17 +18,31 @@ document.getElementById('scene-container').appendChild(renderer.domElement);
 // ---------------------------------------------------------------------
 // DirectLight
 // ---------------------------------------------------------------------
-const dirLight = new THREE.DirectionalLight( 0xffffff, 6 );
-dirLight.target.position.set( 0, 0, - 1 );
+const dirLight = new THREE.DirectionalLight( 0xffffff, 50 );
+dirLight.target.position.set( 0, -10, 0 );
 dirLight.add( dirLight.target );
-dirLight.lookAt( - 1, - 1, 0 );
+dirLight.lookAt( 0, 0, 0 );
 dirLight.name = 'DirectionalLight';
-scene.add( dirLight );
+const helper = new THREE.DirectionalLightHelper(dirLight);
+//scene.add(  helper  );
+//scene.add( dirLight );
+// ---------------------------------------------------------------------
+// DirectLight
+// ---------------------------------------------------------------------
+const AmbientLight = new THREE.AmbientLight( 0xffffff );
 
-//THE CUBE
-const geometry = new THREE.BoxGeometry( 1, 1, 1 );
-const material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
-const cube = new THREE.Mesh( geometry, material );
+scene.add( AmbientLight );
+// ---------------------------------------------------------------------
+// PointLight
+// ---------------------------------------------------------------------
+const light2 = new THREE.PointLight(0xffffff, 50);
+light2.position.set( -50, 150, 35 );
+light2.lookAt( 0, -100, 0 );
+scene.add(light2);
+
+const helper2 = new THREE.PointLightHelper(light2);
+scene.add(helper2);
+
 //scene.add( cube );
 
 // load an obj
@@ -46,35 +60,48 @@ const cube = new THREE.Mesh( geometry, material );
 
 // THE X GLTF
 const loader = new GLTFLoader();
-
 const texture = textureLoader.load( '/textures/hack.jpg' );
 texture.flipY = false;
 
+let mixer;
+let model;
+
 // Load your GLTF model
-loader.load('/models/loki_scepter.gltf', function (gltf) {
+loader.load('/models/locki_sceptre2.gltf', function (gltf) {
     gltf.scene.traverse(function (child) {
         if (child.type === 'Mesh') {
             let m = child
-			m.material.map = texture;
+			//
 			console.log(m)
             m.receiveShadow = true
             m.castShadow = true
-			
+            if (child.name === 'mvx') {
+                // test texture add
+                m.material.map = texture;
+                m.material.emissiveIntensity = 2.5;
+            }
+            
         }
         if (child.type === 'SpotLight') {
             let l = child
 			console.log(l)
             l.castShadow = true
             l.shadow.bias = -0.003
-            l.shadow.mapSize.width = 2048
-            l.shadow.mapSize.height = 2048
+            //l.shadow.mapSize.width = 2048
+            //l.shadow.mapSize.height = 2048
         }
+
     })
+    model = gltf.scene
+    mixer = new THREE.AnimationMixer(model);
+    gltf.animations.forEach((clip) => {
+        mixer.clipAction(clip).play();
+    });
     progressBar.style.display = 'none'
 	gltf.scene.scale.set(70, 70, 70)
 	gltf.scene.position.set(0,10,10)
 
-    scene.add(gltf.scene)
+    scene.add(model)
 
     },
     (xhr) => {
@@ -112,6 +139,10 @@ document.body.appendChild(stats.dom)
 
 function animate() {
 	requestAnimationFrame( animate );
+    // play the animation contained in the gtlf
+    if (mixer) {
+        mixer.update(0.1); // You can adjust the animation speed here
+    }
 	orbit.update();
 	const delta = clock.getDelta();
 	if ( scene) scene.rotation.y -= 0.5 * delta;
