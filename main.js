@@ -141,7 +141,7 @@ function animate() {
 	requestAnimationFrame( animate );
     // play the animation contained in the gtlf
     if (mixer) {
-        mixer.update(0.1); // You can adjust the animation speed here
+        mixer.update(0.2); // You can adjust the animation speed here
     }
 	orbit.update();
 	const delta = clock.getDelta();
