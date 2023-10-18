@@ -35,13 +35,13 @@ scene.add( AmbientLight );
 // ---------------------------------------------------------------------
 // PointLight
 // ---------------------------------------------------------------------
-const light2 = new THREE.PointLight(0xffffff, 50);
-light2.position.set( -50, 150, 35 );
-light2.lookAt( 0, -100, 0 );
+const light2 = new THREE.PointLight(0xffffff, 1, 100);
+light2.position.set( 0, 0, 0 );
+//light2.lookAt( 0, -100, 0 );
 scene.add(light2);
 
-const helper2 = new THREE.PointLightHelper(light2);
-scene.add(helper2);
+//const helper2 = new THREE.PointLightHelper(light2);
+//scene.add(helper2);
 
 //scene.add( cube );
 
@@ -67,7 +67,7 @@ let mixer;
 let model;
 
 // Load your GLTF model
-loader.load('/models/locki_sceptre2.gltf', function (gltf) {
+loader.load('/models/tesseract_final.gltf', function (gltf) {
     gltf.scene.traverse(function (child) {
         if (child.type === 'Mesh') {
             let m = child
@@ -98,7 +98,7 @@ loader.load('/models/locki_sceptre2.gltf', function (gltf) {
         mixer.clipAction(clip).play();
     });
     progressBar.style.display = 'none'
-	gltf.scene.scale.set(70, 70, 70)
+	gltf.scene.scale.set(22, 22, 22)
 	gltf.scene.position.set(0,10,10)
 
     scene.add(model)
@@ -141,7 +141,7 @@ function animate() {
 	requestAnimationFrame( animate );
     // play the animation contained in the gtlf
     if (mixer) {
-        mixer.update(0.2); // You can adjust the animation speed here
+        mixer.update(0.02); // You can adjust the animation speed here
     }
 	orbit.update();
 	const delta = clock.getDelta();
