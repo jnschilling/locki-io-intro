@@ -14,7 +14,7 @@ const camera = new THREE.PerspectiveCamera(
 );
 camera.position.set(100, 150, -220);
 
-const renderer = new THREE.WebGLRenderer();
+const renderer = new THREE.WebGLRenderer({ alpha: true });
 
 renderer.setSize(window.innerWidth, window.innerHeight - 100);
 document.getElementById("scene-container").appendChild(renderer.domElement);
@@ -29,21 +29,6 @@ let model;
 loader.load(
   "/models/tesseract_final.gltf",
   function (gltf) {
-    gltf.scene.traverse(function (child) {
-      if (child.type === "Mesh") {
-        let m = child;
-        //
-        // m.receiveShadow = true;
-        // m.castShadow = true;
-      }
-      if (child.type === "SpotLight") {
-        let l = child;
-        // l.castShadow = true;
-        // l.shadow.bias = -0.003;
-        //l.shadow.mapSize.width = 2048
-        //l.shadow.mapSize.height = 2048
-      }
-    });
     model = gltf.scene;
     mixer = new THREE.AnimationMixer(model);
     gltf.animations.forEach((clip) => {
