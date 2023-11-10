@@ -29,8 +29,7 @@ a {
 .overlay-container {
   position: relative;
   width: 100%;
-  height: 100%;
-  background-image: url('./public/textures/profile.png')
+  height: calc(100% - 100px);
 }
 
 /* Additional button and positioning styling */
@@ -95,4 +94,53 @@ h2.button-container {
   position: relative;
   width: 100%;
   height: 100%;
+}
+
+.locki-header {
+  display: flex;
+  flex-flow: row nowrap;
+  background-color: #131314;
+  border-bottom: 1px solid #14154A;
+  justify-content: space-between;
+}
+
+.locki-header .home-text {
+  display: flex;
+  align-items: center;
+}
+
+.locki-header .home-text a {
+  color: #6c757d;
+  padding-left: 50px;
+  font-size: 22px;
+}
+
+.locki-header .nav-links-container {
+  padding: 15px;
+}
+
+.locki-header .nav-links-container .nav-links {
+  margin-right: 15px;
+  color: #ffffff;
+}
+
+.locki-footer {
+  display: flex;
+  flex-flow: row nowrap;
+  background-color: #131314;
+  border-top: 1px solid #14154A;
+  justify-content: flex-end;
+  align-items: center;
+  min-height: 50px;
+}
+
+.locki-footer .external-links {
+  cursor: pointer;
+  margin-right: 15px;
+}
+
+.locki-footer .external-links svg {
+  width: 20px;
+  height: 20px;
+  fill: #ffffff;
 }
