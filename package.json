@@ -11,5 +11,6 @@
   "devDependencies": {
     "three": "^0.156.1",
     "vite": "^4.5.0"
-  }
+  },
+  "packageManager": "yarn@1.22.19"
 }
