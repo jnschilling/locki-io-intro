@@ -3,9 +3,7 @@ import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 
 const clock = new THREE.Clock();
-const bgLoader = new THREE.TextureLoader();
 const scene = new THREE.Scene();
-scene.background = bgLoader.load( '/textures/profile.png' );
 const camera = new THREE.PerspectiveCamera(
   45,
   window.innerWidth / (window.innerHeight - 100),
@@ -15,7 +13,6 @@ const camera = new THREE.PerspectiveCamera(
 camera.position.set(100, 150, -220);
 
 const renderer = new THREE.WebGLRenderer({ alpha: true });
-
 renderer.setSize(window.innerWidth, window.innerHeight - 100);
 document.getElementById("scene-container").appendChild(renderer.domElement);
 

@@ -94,12 +94,14 @@ h2.button-container {
   position: relative;
   width: 100%;
   height: 100%;
+  background-image: url('/textures/profile.png');
+  background-size: contain;
 }
 
 .locki-header {
   display: flex;
   flex-flow: row nowrap;
-  background-color: #131314;
+  background-image: linear-gradient(to right, #151515 , #151646, #141415);
   border-bottom: 1px solid #14154A;
   justify-content: space-between;
 }
@@ -127,7 +129,7 @@ h2.button-container {
 .locki-footer {
   display: flex;
   flex-flow: row nowrap;
-  background-color: #131314;
+  background-image: linear-gradient(to right, #0C0C0C , #111253, #0B0D0C);
   border-top: 1px solid #14154A;
   justify-content: flex-end;
   align-items: center;
