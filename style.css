@@ -94,8 +94,9 @@ h2.button-container {
   position: relative;
   width: 100%;
   height: 100%;
-  background-image: url('/textures/profile.png');
+  background-image: url('/textures/intro.gif');
   background-size: contain;
+  padding-left: 30%
 }
 
 .locki-header {
