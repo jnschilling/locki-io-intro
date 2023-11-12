@@ -96,7 +96,7 @@ h2.button-container {
   height: 100%;
   background-image: url('/textures/intro.gif');
   background-size: contain;
-  padding-left: 30%
+  padding-left: 30%;
 }
 
 .locki-header {
@@ -146,4 +146,10 @@ h2.button-container {
   width: 20px;
   height: 20px;
   fill: #ffffff;
+}
+
+.locki-footer .copyright-text {
+  position: absolute;
+  width: 100%;
+  text-align: center;
 }
