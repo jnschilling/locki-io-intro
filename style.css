@@ -61,7 +61,7 @@ body, html {
 
 .intro-section .btn-container {
   display: flex;
-  gap: 10px;
+  gap: 20px;
 }
 
 .intro-section .btn-container .btn {
@@ -72,6 +72,17 @@ body, html {
   font-size: 18px;
   text-decoration: none;
   text-align: center;
+}
+
+.intro-section .btn-container .btn .btn-text {
+  margin: 0;
+  padding: 0;
+  background-image: linear-gradient(45deg, #2326C5, #141415);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
 }
 
 .locki-footer {
