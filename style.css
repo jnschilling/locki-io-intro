@@ -19,6 +19,7 @@ body, html {
   padding: 0;
   height: 100%;
   overflow: hidden;  /* Avoid scrollbars */
+  overflow-y: scroll;
 }
 
 .intro-section {
@@ -59,6 +60,10 @@ body, html {
   max-width: 950px;
 }
 
+.intro-section .intro-section-content {
+  position: relative;
+}
+
 .intro-section .btn-container {
   display: flex;
   gap: 20px;
@@ -74,6 +79,62 @@ body, html {
   text-align: center;
 }
 
+.intro-section .circle1 {
+  position: absolute;
+  top: 30vh;
+  right: -40vh;
+  border: 1px solid #ffffff;
+  border-radius: 65vh;
+  width: 130vh;
+  height: 130vh;
+}
+
+.intro-section .circle2 {
+  position: absolute;
+  top: 50vh;
+  right: -30vh;
+  border: 1px solid #ffffff;
+  border-radius: 50vh;
+  width: 100vh;
+  height: 100vh;
+}
+
+.intro-section .circle3 {
+  position: absolute;
+  top: 70vh;
+  right: -20vh;
+  border: 1px solid #ffffff;
+  border-radius: 35vh;
+  width: 70vh;
+  height: 70vh;
+}
+
+.intro-section .icon-circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  background: black;
+  position: relative;
+  top: 0%;
+  left: 27%;
+}
+
+.intro-section .icon-circle-text {
+  position: relative;
+  top: 20px;
+  left: 27%;
+  color: #ffffff;
+  margin: 0;
+  /* margin-left: -20px; */
+  font-size: 18px;
+}
+
+.intro-section .icon-circle img {
+  position: relative;
+  top: 20px;
+  left: 20px;
+}
+
 .intro-section .btn-container .btn .btn-text {
   margin: 0;
   padding: 0;
@@ -83,6 +144,62 @@ body, html {
   -webkit-text-fill-color: transparent; 
   -moz-background-clip: text;
   -moz-text-fill-color: transparent;
+}
+
+
+.values-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: url(./public/assets/pBackground1.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-left: 80px;
+  padding-right: 80px;
+  color: #ffffff;
+  overflow: hidden;
+}
+
+.values-section .values-container {
+  max-width: calc(100% - 160px);
+}
+
+.values-section .values-section-header {
+  font-family: CallOfDuty;
+  font-size: 48px;
+  text-align: center;
+  margin: 0;
+  margin-top: 5%;
+}
+
+.values-section .values-section-subtitle {
+  font-size: 24px;
+  margin-top: 50px;
+  text-align: center;
+}
+
+.values-section .values-card-container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 5%;
+}
+
+.values-section .values-card-container .values-card {
+  background: #1B1B1BCC;
+  border-radius: 10px;
+  padding: 20px;
+  width: 400px;
+  margin-bottom: 5%;
+}
+
+.values-section .values-card-container .values-card .card-text-1 {
+  font-size: 20px;
+}
+
+.values-section .values-card-container .values-card .card-text-2 {
+  font-size: 16px;
 }
 
 .locki-footer {
@@ -112,4 +229,5 @@ body, html {
   position: absolute;
   width: 100%;
   text-align: center;
+  color: #ffffff;
 }
