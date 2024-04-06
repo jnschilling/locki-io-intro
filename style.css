@@ -146,6 +146,37 @@ body, html {
   -moz-text-fill-color: transparent;
 }
 
+.intro-section .scroll-container {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  bottom: 10vh;
+}
+
+.intro-section .scroll-container .scroll-circle {
+  width: 64px;
+  height: 64px;
+  border-radius: 48px;
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.intro-section .scroll-container .scroll-circle img {
+  width: 16px;
+  height: 20px;
+}
+
+.intro-section .scroll-container .scroll-text {
+  font-size: 18px;
+  color: #8B8B8B;
+  margin: 0;
+  margin-left: 20px;
+  line-height: 64px;
+}
+
 
 .values-section {
   position: relative;
@@ -184,6 +215,7 @@ body, html {
   flex-direction: row;
   flex-wrap: wrap;
   margin-top: 5%;
+  gap: 20px;
 }
 
 .values-section .values-card-container .values-card {
@@ -200,6 +232,63 @@ body, html {
 
 .values-section .values-card-container .values-card .card-text-2 {
   font-size: 16px;
+}
+
+
+.teams-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: url(./public/assets/pBackground2.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-left: 80px;
+  padding-right: 80px;
+  color: #ffffff;
+  overflow: hidden;
+}
+
+.teams-section .teams-container {
+  max-width: calc(100% - 160px);
+}
+
+.teams-section .teams-section-header {
+  font-family: CallOfDuty;
+  font-size: 48px;
+  text-align: center;
+  margin: 0;
+  margin-top: 5%;
+}
+
+.teams-section .teams-section-subtitle {
+  font-size: 24px;
+  margin-top: 50px;
+  text-align: center;
+}
+
+.teams-section .teams-card-container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 5%;
+  gap: 20px;
+}
+
+.teams-section .teams-card-container .teams-card {
+  border-radius: 10px;
+  width: 290px;
+  margin-bottom: 5%;
+}
+
+.teams-section .teams-card-container .teams-card .card-text-1 {
+  font-size: 30px;
+  color: #F6F6F6;
+}
+
+.teams-section .teams-card-container .teams-card .card-text-2 {
+  font-size: 20px;
+  color: #AEAEAE;
 }
 
 .locki-footer {
