@@ -22,7 +22,7 @@
     </script>
   </head>
   <body>
-    <section class="intro-section">
+    <section class="intro-section" id="section1">
       <div class="circle1">
         <div class="icon-circle">
           <img src="./public/assets/achivement1.svg" />
@@ -67,9 +67,15 @@
           >
         </div>
       </div>
+      <div class="scroll-container" onclick="smoothScrollToValue()">
+        <div class="scroll-circle">
+          <img src="./public/assets/scroll.svg" />
+        </div>
+        <p class="scroll-text">Scroll Down</p>
+      </div>
     </section>
 
-    <section class="values-section">
+    <section class="values-section" id="section2">
       <div class="values-container">
         <h1 class="values-section-header">VALUES</h1>
         <p class="values-section-subtitle">
@@ -174,6 +180,6 @@
         </svg>
       </a>
     </footer>
-    <script type="module" src="/main.js"></script>
+    <script src="/main.js"></script>
   </body>
 </html>
