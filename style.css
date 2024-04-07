@@ -67,6 +67,7 @@ body, html {
 .intro-section .btn-container {
   display: flex;
   gap: 20px;
+  flex-wrap: wrap;
 }
 
 .intro-section .btn-container .btn {
@@ -319,4 +320,116 @@ body, html {
   width: 100%;
   text-align: center;
   color: #ffffff;
+}
+
+@media only screen and (max-width: 480px) {
+  .intro-section {
+    padding-left: 0;
+    padding-right: 0;
+    height: unset;
+    min-height: 100vh;
+  }
+
+  .intro-section .circle1, .intro-section .circle2, .intro-section .circle3 {
+    display: none;
+  }
+
+  .intro-section .header-container {
+    justify-content: center;
+    width: 100%;
+    max-width: unset;
+  }
+  
+  .header-container .action-container {
+    display: none;
+  }
+
+  .intro-section .intro-content {
+    font-size: 40px;
+    text-align: center;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .intro-section .btn-container {
+    justify-content: center;
+  }
+
+  .intro-section .btn-container .btn {
+    padding: 10px;
+  }
+
+  .intro-section .scroll-container {
+    display: none;
+  }
+
+
+
+  .values-section {
+    background-size: contain;
+    background-repeat: repeat-y;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  
+  .values-section .values-container {
+    max-width: unset;
+    width: 100%;
+  }
+  
+  .values-section .values-section-subtitle {
+    font-size: 20px;
+    margin-top: 30px;
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+
+  .values-section .values-card-container {
+    margin-top: 75px;
+  }
+
+
+  .teams-section {
+    background: linear-gradient(to right, #0C0C0C , #111253, #0B0D0C);
+    padding-left: 0;
+    padding-right: 0;
+  }
+  
+  .teams-section .teams-container {
+    max-width: unset;
+    width: 100%;
+  }
+  
+  .teams-section .teams-section-header {
+    font-size: 40px;
+    margin-top: 50px;
+  }
+  
+  .teams-section .teams-section-subtitle {
+    font-size: 20px;
+    margin-top: 15px;
+  }
+
+  .teams-section .teams-card-container {
+    justify-content: center;
+    margin-top: 70px;
+    gap: 50px;
+  }
+
+  .teams-section .teams-card-container .teams-card .card-text-1 {
+    margin: 10px auto;
+  }
+
+  .teams-section .teams-card-container .teams-card .card-text-2 {
+    font-size: 16px;
+  }
+
+  .locki-footer {
+    justify-content: center;
+    padding-bottom: 50px;
+  }
+
+  .locki-footer .copyright-text {
+    bottom: 10px;
+  }
 }
